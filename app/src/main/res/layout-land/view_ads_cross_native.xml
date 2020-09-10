@@ -73,9 +73,9 @@
         android:text="Ads By Ecomobile"
         android:textColor="#FFFFFF"
         android:visibility="gone"
-        tools:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@id/iv_ads_info"
         app:layout_constraintEnd_toStartOf="@id/iv_ads_info"
-        app:layout_constraintTop_toTopOf="@id/iv_ads_info" />
+        app:layout_constraintTop_toTopOf="@id/iv_ads_info"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

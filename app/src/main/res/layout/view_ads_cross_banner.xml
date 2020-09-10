@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/all_bg_ads_cross_banner">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/all_ic_logo_app" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/appCompatImageView2"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Photo Video Editor"
+            android:textColor="#495057"
+            android:textSize="16sp"
+            android:textStyle="bold|italic" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save your best moment"
+            android:textColor="#495057"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bt_ads_close"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:padding="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/all_ic_close" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_ads_info"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/bt_ads_close"
+        app:layout_constraintEnd_toStartOf="@id/bt_ads_close"
+        app:layout_constraintTop_toTopOf="@id/bt_ads_close"
+        app:srcCompat="@drawable/all_ic_ads_info_banner" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/bt_open_ads"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:background="@drawable/all_shape_bt_boder_blue"
+        android:text="INSTALL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_ads_info"
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_ads_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:text="Ads By Ecomobile"
+        android:textColor="#000000"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/iv_ads_info"
+        app:layout_constraintEnd_toStartOf="@id/iv_ads_info"
+        app:layout_constraintTop_toTopOf="@id/iv_ads_info" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

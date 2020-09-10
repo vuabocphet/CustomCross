@@ -11,8 +11,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ViewAdsCross viewAdsCross=findViewById(R.id.view_ads_cross);
-        viewAdsCross.setEvenAdsCross(new ViewAdsCross.EvenAdsCross() {
+        ViewAdsCrossBanner viewAdsCross=findViewById(R.id.view_ads_cross);
+        viewAdsCross.setEvenAdsCross(new ViewAdsCrossBanner.EvenAdsCross() {
             @Override
             public void onOpenInfoAds() {
                 Toast.makeText(MainActivity.this, "onOpenInfoAds", Toast.LENGTH_SHORT).show();

@@ -13,10 +13,48 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ViewAdsCross extends FrameLayout {
+public class ViewAdsCrossBanner extends FrameLayout {
 
     private EvenAdsCross evenAdsCross;
+
     private boolean isShowTvInfoAds = false;
+
+    @BindView(R.id.tv_ads_info)
+    AppCompatTextView tvAdsInfo;
+
+    @OnClick({R.id.iv_ads_info, R.id.bt_open_ads, R.id.tv_ads_info, R.id.bt_ads_close})
+    public void onClick(View view) {
+        int id = view.getId();
+        switch (id) {
+            case R.id.iv_ads_info:
+            case R.id.tv_ads_info:
+                if (this.isShowTvInfoAds) {
+                    this.getEvenAdsCross().onOpenInfoAds();
+                    this.isShowTvInfoAds = false;
+                    this.tvAdsInfo.setVisibility(GONE);
+                    return;
+                }
+                this.tvAdsInfo.setVisibility(VISIBLE);
+                this.isShowTvInfoAds = true;
+                return;
+            case R.id.bt_open_ads:
+                this.getEvenAdsCross().onOpenAdsGooglePlay();
+                return;
+            case R.id.bt_ads_close:
+                this.setVisibility(GONE);
+                return;
+        }
+    }
+
+    public ViewAdsCrossBanner(@NonNull Context context) {
+        super(context);
+        this.init();
+    }
+
+    public ViewAdsCrossBanner(@NonNull Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        this.init();
+    }
 
     public void setEvenAdsCross(EvenAdsCross evenAdsCross) {
         this.evenAdsCross = evenAdsCross;
@@ -36,53 +74,8 @@ public class ViewAdsCross extends FrameLayout {
         } : this.evenAdsCross;
     }
 
-
-    @BindView(R.id.tv_ads_info)
-    AppCompatTextView tvAdsInfo;
-
-    @OnClick({R.id.iv_ads_info, R.id.bt_open_ads, R.id.tv_ads_info})
-    public void onClick(View view) {
-        int id = view.getId();
-        switch (id) {
-            case R.id.iv_ads_info:
-            case R.id.tv_ads_info:
-                if (this.isShowTvInfoAds) {
-                    this.getEvenAdsCross().onOpenInfoAds();
-                    this.isShowTvInfoAds = false;
-                    this.tvAdsInfo.setVisibility(GONE);
-                    return;
-                }
-                this.tvAdsInfo.setVisibility(VISIBLE);
-                this.isShowTvInfoAds = true;
-                return;
-            case R.id.bt_open_ads:
-                this.getEvenAdsCross().onOpenAdsGooglePlay();
-        }
-
-    }
-
-    public ViewAdsCross(@NonNull Context context) {
-        super(context);
-        this.init();
-    }
-
-    public ViewAdsCross(@NonNull Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        this.init();
-    }
-
-    public ViewAdsCross(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        this.init();
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-    }
-
     private void init() {
-        View view = inflate(getContext(), R.layout.view_ads_cross_native, null);
+        View view = inflate(getContext(), R.layout.view_ads_cross_banner, null);
         this.addView(view);
         ButterKnife.bind(this, view);
     }
@@ -94,4 +87,5 @@ public class ViewAdsCross extends FrameLayout {
         void onOpenAdsGooglePlay();
 
     }
+
 }

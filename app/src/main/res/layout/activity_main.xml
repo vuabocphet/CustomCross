@@ -7,11 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.example.customcross.ViewAdsCross
+    <com.example.customcross.ViewAdsCrossBanner
         android:id="@+id/view_ads_cross"
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
+
 
 </RelativeLayout>
